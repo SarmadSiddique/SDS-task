@@ -7,6 +7,7 @@ const PROTECTED_ROUTES = [
   "/users",
   "/profile",
   "/dashboard",
+  "/home",
 ];
 const PUBLIC_ROUTES = [
   "/auth/login",

@@ -26,23 +26,27 @@ const router = useRouter()
     };
  
     return (
-        <div className="flex min-h-screen bg-[#131618] items-center justify-center from-slate-50 to-slate-100 p-4">
+        <div className="flex min-h-screen bg-[#131618] items-center justify-center  p-4">
             <div className="w-full max-w-md">
                 <div className="mb-6 text-center">
                     <h1 className="text-3xl font-bold text-white">Welcome back</h1>
                     <p className="mt-2 text-white">Sign in to your account to continue</p>
                 </div>
 
-                <Card className="overflow-hidden border border-slate-200 shadow-lg">
-                    <CardHeader className="space-y-1 pb-4">
-                        <CardTitle className="text-xl font-semibold text-slate-900">Sign In</CardTitle>
-                        <CardDescription className="text-slate-500">Enter your credentials to access your account</CardDescription>
+                <Card className="overflow-hidden border border-slate-700/50 shadow-lg bg-slate-800/90 backdrop-blur-sm">
+                    <CardHeader className="space-y-1 p-6 pb-0">
+                        <CardTitle className="text-xl font-semibold text-white">
+                            Sign In
+                        </CardTitle>
+                        <CardDescription className="text-slate-300">
+                            Enter your credentials to access your account
+                        </CardDescription>
                     </CardHeader>
 
                     <CardContent>
                         <form onSubmit={handleGrantAccess} className="space-y-5">
                             <div className="space-y-2">
-                                <Label htmlFor="email" className="text-sm font-medium text-slate-700">
+                                <Label htmlFor="email" className="text-sm font-medium text-slate-200">
                                     Email
                                 </Label>
                                 <Input
@@ -52,13 +56,13 @@ const router = useRouter()
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     required
-                                    className="h-11 border-slate-200 focus-visible:ring-slate-400"
+                                    className="h-11 border-slate-600 bg-slate-700/50 text-white placeholder:text-slate-400 focus-visible:ring-cyan-400 focus-visible:border-cyan-400"
                                 />
                             </div>
 
                             <div className="space-y-2">
                                 <div className="flex items-center justify-between">
-                                    <Label htmlFor="password" className="text-sm font-medium text-slate-700">
+                                    <Label htmlFor="password" className="text-sm font-medium text-slate-200">
                                         Password
                                     </Label>
                                    
@@ -71,7 +75,7 @@ const router = useRouter()
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
                                         required
-                                        className="h-11 border-slate-200 pr-10 focus-visible:ring-slate-400"
+                                        className="h-11 border-slate-600 bg-slate-700/50 text-white placeholder:text-slate-400 focus-visible:ring-cyan-400 focus-visible:border-cyan-400"
                                     />
                                     <button
                                         type="button"
@@ -93,15 +97,16 @@ const router = useRouter()
                                 {!isLoading && <ArrowRight className="ml-2 h-4 w-4" />}
                             </Button>
 
-                            <div className="relative my-6">
+                            <div className="relative">
                                 <div className="absolute inset-0 flex items-center">
-                                    <span className="w-full border-t border-slate-200"></span>
+                                    <span className="w-full border-t border-slate-600" />
                                 </div>
-                                <div className="relative flex justify-center">
-                                    <span className="bg-white px-3 text-xs font-medium text-slate-500">OR CONTINUE WITH</span>
+                                <div className="relative flex justify-center text-xs uppercase">
+                                    <span className="bg-slate-800 px-3 text-xs font-medium text-slate-400">
+                                        Or continue with
+                                    </span>
                                 </div>
                             </div>
-
                             <div className="grid grid-cols-2 gap-4">
                                 <Button
                                     variant="outline"
@@ -123,11 +128,14 @@ const router = useRouter()
                         </form>
                     </CardContent>
 
-                    <CardFooter className="flex justify-center border-t border-slate-100 p-6">
-                        <p className="text-sm text-slate-600">
+                    <CardFooter className="flex justify-center border-t border-slate-700/50 p-6 bg-slate-800/30">
+                        <p className="text-sm text-slate-300">
                             Do not have an account?{" "}
-                            <a href="#" className="font-medium text-slate-800 transition-colors hover:text-slate-900 hover:underline">
-                                Create one
+                            <a
+                                href="#"
+                                className="font-medium text-cyan-400 transition-colors hover:text-cyan-300 hover:underline"
+                            >
+                                Sign up
                             </a>
                         </p>
                     </CardFooter>
